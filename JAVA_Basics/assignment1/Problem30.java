@@ -1,0 +1,15 @@
+package assignment1;
+
+import java.util.*;
+import java.util.stream.*;
+import java.util.function.*;
+
+public class Problem30 {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        Map<Boolean, List<Integer>> partitioned = numbers.stream()
+                                                        .collect(Collectors.partitioningBy(n -> n % 2 == 0));
+        System.out.println("Even: " + partitioned.get(true));
+        System.out.println("Odd: " + partitioned.get(false));
+    }
+}
